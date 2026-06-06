@@ -1,31 +1,19 @@
 const express = require('express');
+const userRouter = require('./routes/users.route');
+
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(userRouter);
 
-// GET
-app.get("/", (req, res) => {
-  res.send("Home Page Working");
-  res.end();
+app.get('/', (req, res) => {
+  res.send('<h1>Home Page Working</h1>');
 });
 
-// CREATE
-app.post("/", (req, res) => {
-
-  res.send("POST request received");
-  res.end();
+app.use((req, res) => {
+  res.status(404).send("404 Not valid url");
 });
 
-// UPDATE
-app.put("/", (req, res) => {
-  res.send("PUT request received");
-  res.end();
-});
-
-// DELETE
-app.delete("/", (req, res) => {
-  res.send("DELETE request received");
-  res.end();
-});
 
 module.exports = app;
