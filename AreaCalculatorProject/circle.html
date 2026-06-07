@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background:
+        radial-gradient(circle at top left, rgba(27, 188, 155, 0.28), transparent 28%),
+        linear-gradient(135deg, #f7fbff 0%, #eef7f3 100%);
+    }
+
+    header {
+      padding: 24px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 18px;
+      color: #117864;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(17, 120, 100, 0.25);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 8px 22px rgba(23, 32, 42, 0.08);
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background: #117864;
+    }
+
+    main {
+      min-height: calc(100vh - 92px);
+      display: grid;
+      place-items: center;
+      padding: 28px 18px 54px;
+    }
+
+    .calculator {
+      width: min(440px, 100%);
+      padding: 34px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 24px 60px rgba(23, 32, 42, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+
+    .shape {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      box-shadow: inset -10px -12px 0 rgba(0, 0, 0, 0.08), 0 16px 30px rgba(22, 160, 133, 0.25);
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 2rem;
+      color: #0e6251;
+    }
+
+    p {
+      margin-bottom: 26px;
+      color: #596b75;
+      line-height: 1.5;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 1rem;
+      border: 1px solid #c8ded8;
+      border-radius: 12px;
+      outline: none;
+      background: #fbfffd;
+    }
+
+    input:focus {
+      border-color: #16a085;
+      box-shadow: 0 0 0 4px rgba(22, 160, 133, 0.14);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 12px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #16a085, #117864);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 14px 24px rgba(17, 120, 100, 0.24);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 28px rgba(17, 120, 100, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/circle">Circle Calculator</a></li>
+        <li><a href="/triangle">Triangle Calculator</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="calculator">
+      <div class="shape"></div>
+      <h1>Circle Calculator</h1>
+      <p>Enter the radius to calculate the area of a circle.</p>
+      <form action="/circle" method="POST">
+        <div>
+          <label for="radius">Radius</label>
+          <input type="number" id="radius" name="radius" placeholder="Example: 5" min="0" step="any" required>
+        </div>
+        <button type="submit">Calculate Area</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

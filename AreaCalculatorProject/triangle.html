@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triangle Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1d2733;
+      background:
+        radial-gradient(circle at top right, rgba(74, 144, 226, 0.26), transparent 30%),
+        linear-gradient(135deg, #fffaf5 0%, #f1f6ff 100%);
+    }
+
+    header {
+      padding: 24px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 18px;
+      color: #2f66a3;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(47, 102, 163, 0.25);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 8px 22px rgba(29, 39, 51, 0.08);
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background: #2f66a3;
+    }
+
+    main {
+      min-height: calc(100vh - 92px);
+      display: grid;
+      place-items: center;
+      padding: 28px 18px 54px;
+    }
+
+    .calculator {
+      width: min(460px, 100%);
+      padding: 34px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 24px 60px rgba(29, 39, 51, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+
+    .shape {
+      width: 0;
+      height: 0;
+      margin: 0 auto 22px;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+      border-bottom: 92px solid #4a90e2;
+      filter: drop-shadow(0 16px 18px rgba(74, 144, 226, 0.25));
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 2rem;
+      color: #234f80;
+    }
+
+    p {
+      margin-bottom: 26px;
+      color: #607080;
+      line-height: 1.5;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 1rem;
+      border: 1px solid #cbd9ea;
+      border-radius: 12px;
+      outline: none;
+      background: #fbfdff;
+    }
+
+    input:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.14);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 12px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #4a90e2, #2f66a3);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 14px 24px rgba(47, 102, 163, 0.24);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 28px rgba(47, 102, 163, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/circle">Circle Calculator</a></li>
+        <li><a href="/triangle">Triangle Calculator</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="calculator">
+      <div class="shape"></div>
+      <h1>Triangle Calculator</h1>
+      <p>Enter the base and height to calculate the area of a triangle.</p>
+      <form action="/triangle" method="POST">
+        <div>
+          <label for="base">Base</label>
+          <input type="number" id="base" name="base" placeholder="Example: 8" min="0" step="any" required>
+        </div>
+        <div>
+          <label for="height">Height</label>
+          <input type="number" id="height" name="height" placeholder="Example: 6" min="0" step="any" required>
+        </div>
+        <button type="submit">Calculate Area</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
