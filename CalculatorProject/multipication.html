@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17202a;
+      background:
+        radial-gradient(circle at 12% 14%, rgba(46, 204, 113, 0.22), transparent 25%),
+        radial-gradient(circle at 86% 16%, rgba(52, 152, 219, 0.2), transparent 26%),
+        linear-gradient(135deg, #f8fbff 0%, #eef5f1 58%, #fff7ed 100%);
+    }
+
+    header {
+      padding: 22px 18px 0;
+    }
+
+    nav {
+      width: min(880px, 100%);
+      margin: 0 auto;
+      padding: 12px;
+      border: 1px solid rgba(23, 32, 42, 0.08);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 14px 38px rgba(23, 32, 42, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: #21618c;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 180ms ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background: #21618c;
+      transform: translateY(-1px);
+    }
+
+    main {
+      min-height: calc(100vh - 92px);
+      display: grid;
+      place-items: center;
+      padding: 42px 18px 56px;
+    }
+
+    .calculator {
+      width: min(480px, 100%);
+      padding: 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(23, 32, 42, 0.08);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 26px 70px rgba(23, 32, 42, 0.14);
+    }
+
+    .symbol {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 22px;
+      border-radius: 8px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #117864, #21618c);
+      font-size: 3.1rem;
+      font-weight: 900;
+      box-shadow: 0 18px 34px rgba(17, 120, 100, 0.24);
+    }
+
+    h1 {
+      color: #1c2833;
+      font-size: 2rem;
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px auto 26px;
+      max-width: 34ch;
+      color: #5d6d7e;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      min-height: 50px;
+      padding: 13px 15px;
+      border: 1px solid #d5dde5;
+      border-radius: 8px;
+      background: #fbfdff;
+      color: #1c2833;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #21618c;
+      box-shadow: 0 0 0 4px rgba(33, 97, 140, 0.14);
+    }
+
+    button {
+      min-height: 52px;
+      border: 0;
+      border-radius: 8px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #117864, #21618c);
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 16px 28px rgba(17, 120, 100, 0.24);
+      transition: 180ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 34px rgba(17, 120, 100, 0.28);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/addition">Addition</a></li>
+        <li><a href="/subtraction">Subtraction</a></li>
+        <li><a href="/multipication">Multiplication</a></li>
+        <li><a href="/devison">Division</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="calculator">
+      <div class="symbol">x</div>
+      <h1>Multiplication Calculator</h1>
+      <p>Multiply two numbers with a clean, focused input form.</p>
+      <form action="/multipication" method="post">
+        <div>
+          <label for="number1">First Number</label>
+          <input type="number" id="number1" name="number1" placeholder="Example: 9" step="any" required>
+        </div>
+        <div>
+          <label for="number2">Second Number</label>
+          <input type="number" id="number2" name="number2" placeholder="Example: 6" step="any" required>
+        </div>
+        <button type="submit">Calculate</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
