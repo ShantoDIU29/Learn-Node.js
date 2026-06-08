@@ -154,6 +154,34 @@
       transform: translateY(-2px);
       box-shadow: 0 20px 34px rgba(17, 120, 100, 0.28);
     }
+
+    .result {
+      display: none;
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(17, 120, 100, 0.22);
+      background: linear-gradient(135deg, rgba(17, 120, 100, 0.1), rgba(33, 97, 140, 0.1));
+      text-align: center;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result span {
+      display: block;
+      margin-bottom: 6px;
+      color: #5d6d7e;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .result strong {
+      color: #117864;
+      font-size: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -184,7 +212,27 @@
         </div>
         <button type="submit">Calculate</button>
       </form>
+      <div class="result" id="resultBox" aria-live="polite">
+        <span>Multiplication is</span>
+        <strong id="resultValue">0</strong>
+      </div>
     </section>
   </main>
+  <script>
+    const form = document.querySelector("form");
+    const resultBox = document.getElementById("resultBox");
+    const resultValue = document.getElementById("resultValue");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const number1 = Number(document.getElementById("number1").value);
+      const number2 = Number(document.getElementById("number2").value);
+      const result = number1 * number2;
+
+      resultValue.textContent = result;
+      resultBox.classList.add("show");
+    });
+  </script>
 </body>
 </html>
